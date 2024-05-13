@@ -51,7 +51,7 @@ float fahrenheitParaKelvin(){
 
     cout << "\nDigite a temperatura em Fahrenheit: ";
     cin >> entrada;
-    return (5 * (entrada - tempCondFahrenheit) + tempCondKelvin)/9;
+    return ((entrada - tempCondFahrenheit)*5/9+tempCondKelvin);
 }
 
 
@@ -71,7 +71,7 @@ float menu(){
     cin >> op;
     switch (op){
         case 0:
-            return -274;
+            return 0;
         case 1:
             result = celsiusParaKelvin();
             cout << "\nKelvin: " << result << "º";
@@ -109,7 +109,7 @@ int main()
     do{
         sair = menu();
         getch();
-    }while(sair > -273);
+    }while(sair != 0);
 
     return 0;
 }
